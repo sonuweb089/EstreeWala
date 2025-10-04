@@ -7,7 +7,7 @@ const heroVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.3,
       ease: [0.17, 0.55, 0.55, 1],
       staggerChildren: 0.2,
       when: "beforeChildren",
@@ -20,7 +20,7 @@ const childVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const QuickServiceHero = () => {
+const QuickServiceHero = ({ setShowForm }) => {
   return (
     <div className="h-[80vh] flex items-center bg-gradient-to-b from-[#C9B9A5] to-[#F5F0E8] justify-center text-center py-20 px-4 relative overflow-hidden">
       <div className="absolute top-1/4 left-1/4 text-4xl text-white opacity-40 transform rotate-12">
@@ -53,6 +53,7 @@ const QuickServiceHero = () => {
         </motion.p>
 
         <motion.button
+          onClick={() => setShowForm(true)}
           className="bg-[#2E2A53] text-white text-xl font-semibold py-3 px-10 rounded-full shadow-lg
                      transition-colors duration-300 ease-in-out
                      hover:bg-[#2E2A78] hover:shadow-xl"

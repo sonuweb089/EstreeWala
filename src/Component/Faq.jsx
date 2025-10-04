@@ -10,7 +10,7 @@ const textColumnVariants = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.3,
       ease: [0.17, 0.55, 0.55, 1],
       staggerChildren: 0.15,
     },

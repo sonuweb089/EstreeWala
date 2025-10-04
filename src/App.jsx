@@ -10,20 +10,22 @@ import FAQ from "./Component/Faq";
 import CTA from "./Component/Cta";
 import QuickService from "./Component/QuickService";
 import Footer from "./Component/footer";
-
+import { useState } from "react";
 export default function App() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
-    <div className="absolute inset-0 bg-gradient-to-b from-[#F5F0E8] to-[#C9B9A5] opacity-80">
-      <Navbar />
-      <Hero />
+    <div className="absolute inset-0 bg-gradient-to-b  from-[#F5F0E8] to-[#C9B9A5] opacity-80">
+      <Navbar showForm={showForm} setShowForm={setShowForm} />
+      <Hero setShowForm={setShowForm} />
       <Services></Services>
-      <About></About>
+      <About setShowForm={setShowForm}></About>
       <HowItWorks></HowItWorks>
       <Eco></Eco>
       <CTA />
       <Testimonials />
       <FAQ />
-      <QuickService />
+      <QuickService setShowForm={setShowForm} />
       <Footer />
     </div>
   );

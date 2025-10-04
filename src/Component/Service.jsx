@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { FaRegClock, FaMoneyBillWave, FaLeaf } from "react-icons/fa";
 import myimg from "../assets/pic.jpg";
 import myimg1 from "../assets/pic2.jpg";
 import hero from "../assets/hero1.png";
@@ -12,7 +12,7 @@ const Service = () => {
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.2 }}
         className="flex justify-evenly gap-6 px-4 md:px-6 max-w-6xl mx-auto"
       >
         <div className="relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer h-96">
@@ -64,7 +64,10 @@ const Service = () => {
                          transition-all duration-300 ease-in-out 
                          hover:bg-[#3A356A] hover:scale-105 hover:shadow-2xl cursor-pointer" // Hover background is a slightly lighter navy for subtle effect
               >
-                <div className="mb-4 text-4xl text-white">⏱️</div>
+                <div className="mb-4 text-4xl text-white">
+                  {" "}
+                  <FaRegClock size={32} className="text-[#6E5A4C]" />
+                </div>
 
                 <h3 className="text-2xl font-semibold mb-2">Time saving</h3>
                 <p className="text-[#E9DDC9] text-lg leading-relaxed">
@@ -78,7 +81,10 @@ const Service = () => {
                          transition-all duration-300 ease-in-out 
                          hover:bg-[#3A356A] hover:scale-105 hover:shadow-2xl cursor-pointer"
               >
-                <div className="mb-4 text-4xl text-white">💰</div>
+                <div className="mb-4 text-4xl text-white">
+                  {" "}
+                  <FaMoneyBillWave size={32} className="text-[#496e44]" />
+                </div>
 
                 <h3 className="text-2xl font-semibold mb-2">Money saving</h3>
                 <p className="text-[#E9DDC9] text-lg leading-relaxed">
@@ -92,7 +98,10 @@ const Service = () => {
                          transition-all duration-300 ease-in-out 
                          hover:bg-[#3A356A] hover:scale-105 hover:shadow-2xl cursor-pointer"
               >
-                <div className="mb-4 text-4xl text-white">🌿</div>
+                <div className="mb-4 text-4xl text-white">
+                  {" "}
+                  <FaLeaf size={32} className="text-[#6E5A4C]" />
+                </div>
 
                 <h3 className="text-2xl font-semibold mb-2">
                   Environmentally friendly

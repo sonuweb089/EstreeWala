@@ -1,5 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { MdShoppingBasket } from "react-icons/md";
+import { FaTshirt } from "react-icons/fa";
+import { GiSewingNeedle } from "react-icons/gi";
+
 const OurServicesSection = () => {
   const topSectionVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -7,7 +11,7 @@ const OurServicesSection = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.3,
         ease: [0.17, 0.55, 0.55, 1],
         staggerChildren: 0.15,
         when: "beforeChildren",
@@ -96,7 +100,7 @@ const OurServicesSection = () => {
           </motion.div>
         </motion.div>
 
-        <motion.div
+        {/*       <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={cardContainerVariants}
           initial="hidden"
@@ -104,7 +108,7 @@ const OurServicesSection = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div
-            className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center 
+            className="bg-[#F5F0E8]  rounded-2xl shadow-lg p-8 flex flex-col items-center text-center 
                        transition-all duration-300 ease-in-out cursor-pointer
                        hover:scale-105 hover:shadow-xl hover:bg-gray-50"
             variants={cardVariants}
@@ -113,7 +117,7 @@ const OurServicesSection = () => {
               className="mb-4 text-5xl text-[#00CCCC]"
               variants={cardIconVariants}
             >
-              🧺
+              <MdShoppingBasket size={40} color="green" />
             </motion.div>
 
             <motion.h3
@@ -132,7 +136,7 @@ const OurServicesSection = () => {
           </motion.div>
 
           <motion.div
-            className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center 
+            className="bg-[#F5F0E8] rounded-2xl shadow-lg p-8 flex flex-col items-center text-center 
                        transition-all duration-300 ease-in-out cursor-pointer
                        hover:scale-105 hover:shadow-xl hover:bg-gray-50"
             variants={cardVariants}
@@ -141,7 +145,7 @@ const OurServicesSection = () => {
               className="mb-4 text-5xl text-[#00CCCC]"
               variants={cardIconVariants}
             >
-              👕
+              <FaTshirt size={40} color="blue" />
             </motion.div>
 
             <motion.h3
@@ -160,7 +164,7 @@ const OurServicesSection = () => {
           </motion.div>
 
           <motion.div
-            className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center 
+            className="bg-[#F5F0E8] rounded-2xl shadow-lg p-8 flex flex-col items-center text-center 
                        transition-all duration-300 ease-in-out cursor-pointer
                        hover:scale-105 hover:shadow-xl hover:bg-gray-50"
             variants={cardVariants}
@@ -185,6 +189,84 @@ const OurServicesSection = () => {
               In addition to dry cleaning and laundry, we offer a range of
               services 7 days a week.
             </motion.p>
+          </motion.div>
+        </motion.div> */}
+        <motion.div
+          className="max-w-7xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          {" "}
+          {/* Cards */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={cardContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            {[
+              {
+                icon: <MdShoppingBasket size={48} color="#00CC99" />,
+                title: "Wash-Dry-Fold",
+              },
+              {
+                icon: <FaTshirt size={48} color="#0077FF" />,
+                title: "Dry Cleaning",
+              },
+              {
+                icon: <GiSewingNeedle size={36} className="text-[#6E5A4C]" />,
+                title: "Clothing Repairs",
+              },
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                className="group relative overflow-hidden rounded-3xl shadow-2xl 
+                 bg-gradient-to-b from-[#E9DDC9] to-[#C9B9A5]
+                 transition-all duration-500 ease-out 
+                 hover:-translate-y-2 hover:shadow-3xl h-[450px] cursor-pointer flex items-center justify-center"
+              >
+                {/* Base Content (Hide on hover) */}
+                <div
+                  className="flex flex-col items-center justify-center text-center px-6 z-10
+                   transition-all duration-500 ease-out
+                   group-hover:opacity-0 group-hover:translate-x-[-50px]"
+                >
+                  <div className="mb-4">{service.icon}</div>
+                  <h3 className="text-2xl font-bold text-[#2E2A53] mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-base text-[#6E5A4C]">
+                    In addition to dry cleaning and laundry, we offer a range of
+                    services 7 days a week.
+                  </p>
+                </div>
+
+                {/* Left-to-right overlay background */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-r from-[#2E2A53]/90 via-[#1A1A1A]/70 to-transparent
+                   translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"
+                ></div>
+
+                {/* Overlay Text (Show on hover) */}
+                <div
+                  className="absolute inset-0 flex flex-col justify-center pl-10 pr-6 text-left 
+                   opacity-0 translate-x-[-30px]
+                   group-hover:opacity-100 group-hover:translate-x-0
+                   transition-all duration-700 ease-out"
+                >
+                  <h3 className="text-2xl font-semibold text-white">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-200 mt-2 text-sm max-w-xs">
+                    We ensure your garments receive premium care with a seamless
+                    process.
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </div>

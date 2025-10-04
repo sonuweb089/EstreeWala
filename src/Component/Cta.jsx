@@ -11,24 +11,22 @@ const headingVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.2,
       ease: [0.17, 0.55, 0.55, 1],
     },
   },
 };
-
 
 const cardContainerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, 
-      delayChildren: 0.3, 
+      staggerChildren: 0.5,
+      delayChildren: 0.3,
     },
   },
 };
-
 
 const cardVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -36,7 +34,7 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.3,
       ease: [0.17, 0.55, 0.55, 1],
     },
   },
@@ -44,10 +42,6 @@ const cardVariants = {
 // ------------------------------
 
 const DeliveryServiceSection = () => {
-
-
-
- 
   const cardsData = [
     {
       text: "We professionally clean them",
@@ -75,7 +69,6 @@ const DeliveryServiceSection = () => {
     },
   ];
 
-
   const orderedCards = [
     {
       img: Ct,
@@ -94,7 +87,7 @@ const DeliveryServiceSection = () => {
       text: "Track the cleaning process",
       color: "transparent",
       textColor: "white",
-    }, 
+    },
     {
       img: Ct3,
       text: "Receive clothes at your door",
@@ -105,73 +98,68 @@ const DeliveryServiceSection = () => {
 
   return (
     <div className="py-16 md:py-24 px-4 md:px-8 relative overflow-hidden bg-gradient-to-b from-[#F5F0E8] to-[#C9B9A5]">
-      <div className="max-w-7xl mx-auto">
-       
-        <motion.div
-          className="mb-12 md:mb-16"
-          variants={headingVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-        >
+      <motion.div
+        className="max-w-7xl mx-auto"
+        variants={headingVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+      >
+        {/* Heading */}
+        <div className="mb-12 md:mb-16">
           <p className="text-[#2E2A35] font-semibold tracking-wider uppercase mb-3">
             Delivery Service
           </p>
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#2E2A53] leading-tight max-w-3xl">
             How Does Dry Cleaning Delivery Work?
           </h2>
-        </motion.div>
+        </div>
 
- 
+        {/* Cards */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
           variants={cardContainerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           {orderedCards.map((card, index) => (
             <motion.div
               key={index}
-              className="relative overflow-hidden rounded-2xl shadow-xl h-[450px] group cursor-pointer
-                         transition-all duration-300 ease-in-out
-                         hover:scale-[1.03] hover:shadow-2xl" 
               variants={cardVariants}
+              className="group relative overflow-hidden rounded-3xl shadow-2xl 
+                   bg-gradient-to-b from-[#E9DDC9] to-[#C9B9A5] 
+                   transition-all duration-500 ease-out 
+                   hover:-translate-y-2 hover:shadow-3xl h-[450px] cursor-pointer"
             >
-           
+              {/* Image */}
               <img
                 src={card.img}
                 alt={card.text}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
 
-            
+              {/* Overlay gradient */}
               <div
-                className="absolute inset-0 p-6 flex flex-col justify-end"
-                style={{
-                  background:
-                    card.color === "transparent" ? "none" : card.color,
-                }}
-              >
-         
-                <div
-                  className={`absolute inset-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                ></div>
+                className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent 
+                     opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"
+              ></div>
 
-                <h3
-                  className={`text-xl font-semibold relative z-10`}
-                  style={{ color: card.textColor }}
-                >
-                  {card.text}
-                </h3>
-                <p className="text-sm relative z-10 text-[#E9DDC9]">
-                  The company's primary aim is to provide modern laundry...
+              {/* Text Content */}
+              <div
+                className="absolute bottom-6 left-6 text-white opacity-0 translate-y-6 
+                     group-hover:opacity-100 group-hover:translate-y-0 
+                     transition-all duration-500 ease-out"
+              >
+                <h3 className="text-xl font-semibold">{card.text}</h3>
+                <p className="text-sm text-gray-200 mt-1">
+                  The company’s primary aim is to provide modern laundry...
                 </p>
               </div>
             </motion.div>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 };

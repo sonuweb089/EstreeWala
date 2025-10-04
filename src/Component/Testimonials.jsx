@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={cardContainerVariants}
           initial="hidden"
           whileInView="visible"
@@ -114,20 +114,49 @@ const TestimonialsSection = () => {
           {testimonials.map((t, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl shadow-md p-8 flex flex-col items-start text-left h-full
-                         transition-all duration-300 ease-in-out cursor-pointer
-                         hover:scale-[1.03] hover:shadow-xl hover:border-b-4 hover:border-[#2E2A53]" // Card hover effect
               variants={cardVariants}
+              className="group relative overflow-hidden rounded-3xl shadow-2xl 
+                 bg-gradient-to-b from-[#E9DDC9] to-[#C9B9A5]
+                 transition-all duration-500 ease-out 
+                 hover:-translate-y-2 hover:shadow-3xl h-[420px] cursor-pointer flex items-center justify-center p-8"
             >
-              <div className="mb-4 text-4xl text-[#2E2A53] font-extrabold">
-                ”
+              {/* Base Content (Hide on hover) */}
+              <div
+                className="z-10 flex flex-col justify-center text-left transition-all duration-500 ease-out
+                   group-hover:opacity-0 group-hover:translate-x-[50px]"
+              >
+                <div className="text-5xl text-[#2E2A53] font-extrabold mb-3">
+                  ”
+                </div>
+                <p className="text-base text-[#2E2A53] font-medium mb-4 leading-relaxed">
+                  {t.quote}
+                </p>
+                <p className="text-sm text-[#2E2A23] font-semibold">
+                  — Client Name
+                </p>
               </div>
 
-              <p className="text-base text-[#2E2A53] font-medium mb-4">
-                {t.quote}
-              </p>
+              {/* Right-to-left overlay background */}
+              <div
+                className="absolute inset-0 bg-gradient-to-l from-[#2E2A53]/90 via-[#1A1A1A]/70 to-transparent
+                   translate-x-[100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"
+              ></div>
 
-              <p className="text-sm text-[#2E2A23]">— Client Name</p>
+              {/* Overlay Text (Show on hover) */}
+              <div
+                className="absolute inset-0 flex flex-col justify-center pl-8 pr-6 text-left 
+                   opacity-0 translate-x-[30px]
+                   group-hover:opacity-100 group-hover:translate-x-0
+                   transition-all duration-700 ease-out"
+              >
+                <h3 className="text-2xl font-semibold text-white mb-2">
+                  Client Review
+                </h3>
+                <p className="text-gray-200 text-sm leading-relaxed max-w-xs">
+                  “{t.quote}” <br />{" "}
+                  <span className="text-[#E9DDC9]">— Client Name</span>
+                </p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

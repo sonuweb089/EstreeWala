@@ -9,9 +9,11 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-[#F5F0E8] to-[#C9B9A5] text-[#2E2A53] pt-12 pb-6 font-sans border border-gray-700">
+    <footer className="bg-[#1a1c32] text-white pt-12 pb-6 font-sans border border-gray-700">
       <div className="w-full px-4">
+        {/* Grid Section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+          {/* Column 1: Social Media */}
           <div>
             <div className="flex space-x-4 text-xl mb-4">
               <a href="#" className="hover:text-blue-500">
@@ -30,88 +32,93 @@ const Footer = () => {
                 <FaYoutube />
               </a>
             </div>
-            <p className="text-[#2E2A53] text-sm">
+            <p className="text-gray-400 text-sm">
               Your expert ironing and pressing service. Affordable, high-quality
               care with convenience and efficiency.
             </p>
           </div>
 
+          {/* Column 2: Services */}
           <div>
             <h3 className="text-lg font-semibold mb-3">Our Services</h3>
-            <ul className="space-y-2 text-[#2E2A53] text-sm">
+            <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-white">
                   Ironing & Pressing
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-white">
                   Dry Cleaning (Soon)
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-white">
                   Express Service
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-white">
                   Corporate Plans
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-white">
                   Home Services
                 </a>
               </li>
             </ul>
           </div>
 
+          {/* Column 3: Company */}
           <div>
             <h3 className="text-lg font-semibold mb-3">About Us</h3>
-            <ul className="space-y-2 text-[#2E2A53] text-sm">
+            <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-white">
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-white">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-white">
                   Franchise
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-black">
+                <a href="#" className="hover:text-white">
                   FAQs
                 </a>
               </li>
             </ul>
           </div>
 
+          {/* Column 4: Contact */}
           <div>
             <h3 className="text-lg font-semibold mb-3">Contact</h3>
-            <p className="text-[#2E2A53] text-sm">📞 6789087656</p>
-            <p className="mt-3 text-[#2E2A53] text-sm">
-              <span className="font-semibold text-[#2E2A53]">Office:</span>
+            <p className="text-gray-400 text-sm">📞 6789087656</p>
+            <p className="mt-3 text-gray-400 text-sm">
+              <span className="font-semibold text-white">Office:</span>
               <br />
               Estreewala HQ, A-4, Sector - 3, Noida, UP 201301
             </p>
           </div>
         </div>
 
+        {/* Divider */}
         <hr className="border-gray-700 mb-6" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-[#2E2A53]">
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
           <div className="flex space-x-4 mb-3 md:mb-0">
-            <a href="#" className="hover:text-black">
+            <a href="#" className="hover:text-white">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-black">
+            <a href="#" className="hover:text-white">
               Terms & Conditions
             </a>
           </div>
