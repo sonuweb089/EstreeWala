@@ -85,7 +85,7 @@ const FAQSection = () => {
           variants={textColumnVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <motion.p
             className="text-[#2E2A53] font-semibold tracking-wider uppercase mb-3"
@@ -163,7 +163,7 @@ const FAQSection = () => {
           variants={imageColumnVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <motion.div
             className="relative overflow-hidden rounded-2xl shadow-xl w-full h-[250px]"

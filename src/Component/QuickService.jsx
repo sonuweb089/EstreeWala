@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { GiSwan } from "react-icons/gi";
 const heroVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -22,14 +22,7 @@ const childVariants = {
 
 const QuickServiceHero = ({ setShowForm }) => {
   return (
-    <div className="h-[80vh] flex items-center bg-gradient-to-b from-[#C9B9A5] to-[#F5F0E8] justify-center text-center py-20 px-4 relative overflow-hidden">
-      <div className="absolute top-1/4 left-1/4 text-4xl text-white opacity-40 transform rotate-12">
-        🦢
-      </div>
-      <div className="absolute bottom-1/4 right-1/4 text-4xl text-white opacity-40 transform -rotate-12">
-        🦢
-      </div>
-
+    <div className="h-[95vh] flex items-center bg-gradient-to-b from-[#C9B9A5] to-[#F5F0E8] justify-center text-center py-20 px-4 relative overflow-hidden ">
       <motion.div
         className="max-w-4xl mx-auto z-10"
         variants={heroVariants}
@@ -37,7 +30,7 @@ const QuickServiceHero = ({ setShowForm }) => {
         animate="visible"
       >
         <motion.h1
-          className="text-6xl md:text-7xl font-extrabold text-[#2E2A53] leading-tight mb-6"
+          className="text-6xl md:text-7xl font-extrabold text-[#2E2A53] leading-tight mt-5"
           variants={childVariants}
         >
           Quick. Fast. <br />

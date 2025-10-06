@@ -66,7 +66,7 @@ const OurServicesSection = () => {
         <motion.div
           className="lg:w-1/3 mb-6 lg:mb-0"
           variants={topSectionVariants}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <p className="text-[#2E2A45] font-semibold tracking-wider uppercase text-lg">
             Our services
@@ -77,7 +77,7 @@ const OurServicesSection = () => {
           variants={topSectionVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <motion.div
             className="lg:w-1/2 mb-6 lg:mb-0"
@@ -195,7 +195,7 @@ const OurServicesSection = () => {
           className="max-w-7xl mx-auto"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: false, amount: 0.5 }}
         >
           {" "}
           {/* Cards */}
@@ -204,7 +204,7 @@ const OurServicesSection = () => {
             variants={cardContainerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             {[
               {

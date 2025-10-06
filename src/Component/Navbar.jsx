@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Estreewala from "../assets/Estreewala.png";
 import { MdShoppingBasket } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ showForm, setShowForm }) => {
   const [open, setOpen] = useState(false);
@@ -48,9 +49,10 @@ const Navbar = ({ showForm, setShowForm }) => {
           </div>
 
           <nav className="hidden md:flex items-center gap-6 text-[#2E2A53] font-medium">
-            <a href="#services" className="hover:text-[#6E5A4C] transition">
+            <Link to="/ourservice" className="hover:text-[#6E5A4C] transition">
               Services
-            </a>
+            </Link>
+
             <a href="#eco" className="hover:text-[#6E5A4C] transition">
               Pricing
             </a>

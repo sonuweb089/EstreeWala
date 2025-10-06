@@ -10,8 +10,9 @@ const Hero = ({ setShowForm }) => {
         className="w-full"
       >
         <div className="relative z-10 max-w-5xl mx-auto px-13">
-          <h2 className="text-5xl md:text-8xl font-bold leading-snug text-[#2E2A53]">
-            Dry <span className="text-[#6E5A4C]">Cleaning</span> & <br />
+          <h2 className="text-2xl md:text-7xl font-bold leading-snug text-[#2E2A53]">
+            Dry <span className="text-[#6E5A4C]">Cleaning</span>
+            <br /> & <br />
             Laundry Experts
           </h2>
 

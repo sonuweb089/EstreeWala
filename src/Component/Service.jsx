@@ -11,7 +11,7 @@ const Service = () => {
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ duration: 0.2 }}
         className="flex justify-evenly gap-6 px-4 md:px-6 max-w-6xl mx-auto"
       >
