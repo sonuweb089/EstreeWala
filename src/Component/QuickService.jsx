@@ -24,7 +24,7 @@ const QuickServiceHero = ({ setShowForm }) => {
   return (
     <div className="h-[95vh] flex items-center bg-gradient-to-b from-[#C9B9A5] to-[#F5F0E8] justify-center text-center py-20 px-4 relative overflow-hidden ">
       <motion.div
-        className="max-w-4xl mx-auto z-10"
+        className="max-w-4xl mx-auto z-11"
         variants={heroVariants}
         initial="hidden"
         animate="visible"
