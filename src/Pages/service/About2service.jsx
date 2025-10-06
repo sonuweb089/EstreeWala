@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import SerAb3 from "../../src/assets/SerAb3.jpg";
-import SerAb4 from "../../src/assets/SerAb4.jpg";
-import SerAb5 from "../../src/assets/SerAb5.jpg";
+import SerAb3 from "../../assets/serAb3.jpg";
+import SerAb4 from "../../assets/serAb4.jpg";
+import SerAb5 from "../../assets/serAb5.jpg";
 const colors = {
   taupe: "#6E5A4C",
   cream: "#E9DDC9",

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Devlivery from "../../src/assets/Delivery.png";
+import Devlivery from "../../assets/Delivery.png";
 const colors = {
   taupe: "#6E5A4C",
   cream: "#E9DDC9",

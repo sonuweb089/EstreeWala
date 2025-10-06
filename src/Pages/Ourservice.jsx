@@ -1,5 +1,5 @@
 import React from "react";
-import ServiceHero from "../src/assets/servicehero.jpg";
+import ServiceHero from "../assets/servicehero.jpg";
 
 const LaundryWalaHeroInline = () => {
   return (

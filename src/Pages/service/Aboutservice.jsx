@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import SerAb from "../../src/assets/SerAb.jpg";
-import SerAb1 from "../../src/assets/SerAb1.jpg";
-import SerAb2 from "../../src/assets/SerAb2.jpg";
+import SerAb from "../../assets/serAb.jpg";
+import SerAb1 from "../../assets/serAb1.jpg";
+import SerAb2 from "../../assets/serAb2.jpg";
 const LaundryWalaAbout = () => {
   // Animation Variants
   const container = {

@@ -11,14 +11,14 @@ import FAQ from "./Component/Faq";
 import CTA from "./Component/Cta";
 import QuickService from "./Component/QuickService";
 import { Routes, Route } from "react-router-dom";
-import Ourservice from "../Pages/Ourservice";
-import About1 from "../Pages/service/Aboutservice";
-import About2 from "../Pages/service/About2service";
-import Whyus from "../Pages/service/whyus";
-import Offer from "../Pages/service/Offer";
-import Value from "../Pages/service/Delivery";
-import Test from "../Pages/service/Test";
-import Blog from "../Pages/service/blog";
+import Ourservice from "../src/Pages/Ourservice";
+import About1 from "../src/Pages/service/Aboutservice";
+import About2 from "../src/Pages/service/About2service";
+import Whyus from "../src/Pages/service/whyus";
+import Offer from "../src/Pages/service/Offer";
+import Value from "../src/Pages/service/Delivery";
+import Test from "../src/Pages/service/Test";
+import Blog from "../src/Pages/service/blog";
 
 export default function App() {
   const [showForm, setShowForm] = useState(false);
