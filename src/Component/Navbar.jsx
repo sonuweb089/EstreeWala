@@ -52,22 +52,27 @@ const Navbar = ({ showForm, setShowForm }) => {
               Services
             </a>
             <a href="#eco" className="hover:text-[#6E5A4C] transition">
-              Environment
+              Pricing
             </a>
             <a href="#how" className="hover:text-[#6E5A4C] transition">
-              How it works
+              Policies
             </a>
             <a href="#faq" className="hover:text-[#6E5A4C] transition">
-              FAQ
+              Laundry Blog
+            </a>
+            <a href="#faq" className="hover:text-[#6E5A4C] transition">
+              Contact Us
             </a>
           </nav>
 
-          <button
-            onClick={() => setShowForm(true)}
-            className="bg-[#2E2A53] text-[#F5F0E8] px-5 py-2 rounded-full hover:bg-[#1A1A1A] transition"
-          >
-            Book Pickup
-          </button>
+          <div className="hidden md:block">
+            <button
+              onClick={() => setShowForm(true)}
+              className="bg-[#2E2A53] text-[#F5F0E8] px-5 py-2 rounded-full hover:bg-[#1A1A1A] transition"
+            >
+              Book Pickup
+            </button>
+          </div>
 
           <div className="md:hidden">
             <button
@@ -83,22 +88,27 @@ const Navbar = ({ showForm, setShowForm }) => {
         {/* Mobile menu */}
         {open && (
           <div className="md:hidden border-t bg-offwhite">
-            <div className="px-6 py-4 space-y-3">
-              <a href="#services" className="block">
+            <div className="px-6 py-4 space-y-3 flex flex-col">
+              <a href="#services" className="hover:text-[#6E5A4C] transition">
                 Services
               </a>
-              <a href="#eco" className="block">
-                Environment
+              <a href="#eco" className="hover:text-[#6E5A4C] transition">
+                Pricing
               </a>
-              <a href="#how" className="block">
-                How it works
+              <a href="#how" className="hover:text-[#6E5A4C] transition">
+                Policies
               </a>
-              <a href="#faq" className="block">
-                FAQ
+              <a href="#faq" className="hover:text-[#6E5A4C] transition">
+                Laundry Blog
               </a>
+              <a href="#contact" className="hover:text-[#6E5A4C] transition">
+                Contact Us
+              </a>
+
+              {/* Button inside menu */}
               <button
                 onClick={() => setShowForm(true)}
-                className="w-full mt-2 bg-[#2E2A53] text-white py-2 rounded"
+                className="w-full mt-2 bg-[#2E2A53] text-white py-2 rounded hover:bg-[#1A1A1A] transition"
               >
                 Book Pickup
               </button>
