@@ -91,9 +91,12 @@ const Navbar = ({ showForm, setShowForm }) => {
         {open && (
           <div className="md:hidden border-t bg-offwhite">
             <div className="px-6 py-4 space-y-3 flex flex-col">
-              <a href="#services" className="hover:text-[#6E5A4C] transition">
+              <Link
+                to="/ourservice"
+                className="hover:text-[#6E5A4C] transition"
+              >
                 Services
-              </a>
+              </Link>
               <a href="#eco" className="hover:text-[#6E5A4C] transition">
                 Pricing
               </a>
