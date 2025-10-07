@@ -44,19 +44,6 @@ export default function App() {
           path="/"
           element={
             <>
-              <Ourservice /> <About1 setShowForm={setShowForm} />
-              <About2 setShowForm={setShowForm} />{" "}
-              <Whyus setShowForm={setShowForm} />{" "}
-              <Offer setShowForm={setShowForm} />
-              <Value /> <Test /> <Blog />{" "}
-              <QuickService setShowForm={setShowForm} />
-            </>
-          }
-        />
-        <Route
-          path="/ourservice"
-          element={
-            <>
               <Hero setShowForm={setShowForm} />
               <Services />
               <About setShowForm={setShowForm} />
@@ -65,6 +52,19 @@ export default function App() {
               <CTA />
               {/*   <Testimonials /> */}
               <FAQ />
+              <QuickService setShowForm={setShowForm} />
+            </>
+          }
+        />
+        <Route
+          path="/ourservice"
+          element={
+            <>
+              <Ourservice /> <About1 setShowForm={setShowForm} />
+              <About2 setShowForm={setShowForm} />{" "}
+              <Whyus setShowForm={setShowForm} />{" "}
+              <Offer setShowForm={setShowForm} />
+              <Value /> <Test /> <Blog />{" "}
               <QuickService setShowForm={setShowForm} />
             </>
           }
