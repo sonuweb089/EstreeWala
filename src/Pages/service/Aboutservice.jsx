@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import SerAb from "../../assets/serAb.jpg";
 import SerAb1 from "../../assets/serAb1.jpg";
 import SerAb2 from "../../assets/serAb2.jpg";
-const LaundryWalaAbout = () => {
+import SerAb3 from "../../assets/serAb3.jpg";
+import SerAb4 from "../../assets/serAb4.jpg";
+const LaundryWalaAbout = ({ setShowForm }) => {
   // Animation Variants
   const container = {
     hidden: { opacity: 0 },
@@ -112,12 +114,12 @@ const LaundryWalaAbout = () => {
           {/* Accreditation Logos */}
           <div className="flex flex-wrap items-center gap-6 mb-10">
             <img
-              src="https://via.placeholder.com/100x40/C9B9A5/FFFFFF?text=Accredited"
+              src={SerAb3}
               alt="Accredited Business"
               className="h-10 opacity-75"
             />
             <img
-              src="https://via.placeholder.com/100x40/E9DDC9/FFFFFF?text=Guaranteed"
+              src={SerAb4}
               alt="Quality Guaranteed"
               className="h-10 opacity-75"
             />
@@ -126,6 +128,7 @@ const LaundryWalaAbout = () => {
           {/* Call to Action */}
           <div className="flex flex-col sm:flex-row gap-4">
             <motion.button
+              onClick={() => setShowForm(true)}
               variants={item}
               className="font-bold py-3 px-6 rounded-md shadow-md hover:opacity-90 bg-[#6E5A4C] text-[#F5F0E8] transition duration-300"
             >

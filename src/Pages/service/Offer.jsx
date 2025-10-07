@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import Blog2 from "../../assets/serAb2.jpg";
+import Blog3 from "../../assets/serAb3.jpg";
 const colors = {
   taupe: "#6E5A4C",
   cream: "#E9DDC9",
@@ -43,7 +44,7 @@ const headerItem = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const LaundryWalaOffers = () => {
+const LaundryWalaOffers = ({ setShowForm }) => {
   // Array of offer data
   const offers = [
     {
@@ -51,16 +52,14 @@ const LaundryWalaOffers = () => {
       price: "₹1499/month",
       details:
         "Get all your regular washing and folding done for one low monthly price. Never worry about laundry again.",
-      image:
-        "https://via.placeholder.com/600x400/C9B9A5/FFFFFF?text=Wash+and+Fold+Offer",
+      image: Blog2,
     },
     {
       title: "Deluxe Dry Cleaning Package",
       price: "₹1999/package",
       details:
         "Includes 5 premium dry cleaning garments (suits, sarees, coats). Call us or schedule online at your convenience.",
-      image:
-        "https://via.placeholder.com/600x400/2E2A53/FFFFFF?text=Dry+Cleaning+Offer",
+      image: Blog3,
     },
   ];
 
@@ -151,6 +150,7 @@ const LaundryWalaOffers = () => {
 
                   {/* CTA Button */}
                   <button
+                    onClick={() => setShowForm(true)}
                     className="font-bold py-3 px-6 rounded-md transition duration-300 shadow-lg hover:opacity-90 flex items-center justify-center w-full lg:w-auto"
                     style={{
                       backgroundColor: colors.taupe,

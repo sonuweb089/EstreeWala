@@ -2,30 +2,20 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Estreewala from "../assets/Estreewala.png";
 import { MdShoppingBasket } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = ({ showForm, setShowForm }) => {
   const [open, setOpen] = useState(false);
+  const location = useLocation(); // current route
 
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    address: "",
-    service: "",
-    date: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Laundry Pickup Request:", formData);
-    alert("Your pickup request has been sent ");
-    setShowForm(false);
-    setFormData({ name: "", phone: "", address: "", service: "", date: "" });
-  };
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/ourservice" },
+    { name: "Pricing", path: "/pricing" },
+    { name: "Policies", path: "/policy" },
+    { name: "Laundry Blog", path: "/blog" },
+    { name: "Contact Us", path: "/contact" },
+  ];
 
   return (
     <>
@@ -37,6 +27,7 @@ const Navbar = ({ showForm, setShowForm }) => {
         className="sticky top-0 z-50 bg-offwhite/80 backdrop-blur-sm shadow-md"
       >
         <div className="container flex items-center justify-between py-4 px-4 md:px-10">
+          {/* Logo */}
           <div className="flex items-center gap-3">
             <img
               src={Estreewala}
@@ -48,25 +39,31 @@ const Navbar = ({ showForm, setShowForm }) => {
             </span>
           </div>
 
+          {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-6 text-[#2E2A53] font-medium">
-            <Link to="/ourservice" className="hover:text-[#6E5A4C] transition">
-              Services
-            </Link>
+            {navLinks.map((link) => {
+              const isActive =
+                link.path === "/"
+                  ? location.pathname === "/" || location.pathname === "/home"
+                  : location.pathname === link.path;
 
-            <a href="#eco" className="hover:text-[#6E5A4C] transition">
-              Pricing
-            </a>
-            <a href="#how" className="hover:text-[#6E5A4C] transition">
-              Policies
-            </a>
-            <a href="#faq" className="hover:text-[#6E5A4C] transition">
-              Laundry Blog
-            </a>
-            <a href="#faq" className="hover:text-[#6E5A4C] transition">
-              Contact Us
-            </a>
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`transition pb-1 ${
+                    isActive
+                      ? "border-b-2 border-[#2E2A53] text-[#2E2A53]"
+                      : "hover:text-[#6E5A4C]"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </nav>
 
+          {/* Desktop Button */}
           <div className="hidden md:block">
             <button
               onClick={() => setShowForm(true)}
@@ -76,6 +73,7 @@ const Navbar = ({ showForm, setShowForm }) => {
             </button>
           </div>
 
+          {/* Mobile Menu Toggle */}
           <div className="md:hidden">
             <button
               onClick={() => setOpen(!open)}
@@ -87,30 +85,25 @@ const Navbar = ({ showForm, setShowForm }) => {
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Menu */}
         {open && (
           <div className="md:hidden border-t bg-offwhite">
             <div className="px-6 py-4 space-y-3 flex flex-col">
-              <Link
-                to="/ourservice"
-                className="hover:text-[#6E5A4C] transition"
-              >
-                Services
-              </Link>
-              <a href="#eco" className="hover:text-[#6E5A4C] transition">
-                Pricing
-              </a>
-              <a href="#how" className="hover:text-[#6E5A4C] transition">
-                Policies
-              </a>
-              <a href="#faq" className="hover:text-[#6E5A4C] transition">
-                Laundry Blog
-              </a>
-              <a href="#contact" className="hover:text-[#6E5A4C] transition">
-                Contact Us
-              </a>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`transition pb-1 ${
+                    location.pathname === link.path
+                      ? "border-b-2 border-[#2E2A53] text-[#2E2A53]"
+                      : "hover:text-[#6E5A4C]"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
 
-              {/* Button inside menu */}
+              {/* Mobile Book Pickup Button */}
               <button
                 onClick={() => setShowForm(true)}
                 className="w-full mt-2 bg-[#2E2A53] text-white py-2 rounded hover:bg-[#1A1A1A] transition"
@@ -150,13 +143,18 @@ const Navbar = ({ showForm, setShowForm }) => {
                 <span>Book Laundry Pickup</span>
               </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  alert("Your pickup request has been sent");
+                  setShowForm(false);
+                }}
+                className="space-y-4"
+              >
                 <input
                   type="text"
                   name="name"
                   placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="w-full border rounded-md px-4 py-2"
                 />
@@ -164,24 +162,18 @@ const Navbar = ({ showForm, setShowForm }) => {
                   type="tel"
                   name="phone"
                   placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={handleChange}
                   required
                   className="w-full border rounded-md px-4 py-2"
                 />
                 <textarea
                   name="address"
                   placeholder="Pickup Address"
-                  value={formData.address}
-                  onChange={handleChange}
                   required
                   rows="3"
                   className="w-full border rounded-md px-4 py-2"
-                ></textarea>
+                />
                 <select
                   name="service"
-                  value={formData.service}
-                  onChange={handleChange}
                   required
                   className="w-full border rounded-md px-4 py-2"
                 >
@@ -194,8 +186,6 @@ const Navbar = ({ showForm, setShowForm }) => {
                 <input
                   type="date"
                   name="date"
-                  value={formData.date}
-                  onChange={handleChange}
                   required
                   className="w-full border rounded-md px-4 py-2"
                 />

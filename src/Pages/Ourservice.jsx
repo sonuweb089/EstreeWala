@@ -1,16 +1,14 @@
 import React from "react";
 import ServiceHero from "../assets/servicehero.jpg";
-
+import { Link } from "react-router-dom";
 const LaundryWalaHeroInline = () => {
   return (
     <div
       className="relative flex items-center justify-center min-h-[600px] p-4 sm:p-8 bg-cover bg-center"
       style={{ backgroundImage: `url(${ServiceHero})` }}
     >
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/40"></div>
 
-      {/* Hero Content */}
       <div className="relative z-10 w-full max-w-6xl">
         <div className="max-w-xl mb-24 text-white">
           <p className="text-sm font-bold tracking-widest mb-1 text-gray-100">
@@ -32,7 +30,12 @@ const LaundryWalaHeroInline = () => {
           </div>
 
           <button className="font-bold py-4 px-8 rounded-md shadow-lg text-lg bg-[#6E5A4C] hover:bg-opacity-80 transition duration-300">
-            VIEW OUR SERVICES →
+            <Link
+              to="/ourservice"
+              className="font-bold py-4 px-8 rounded-md shadow-lg text-lg bg-[#6E5A4C] hover:bg-opacity-80 transition duration-300"
+            >
+              VIEW OUR SERVICES →
+            </Link>
           </button>
 
           {/* Review Badge */}

@@ -19,6 +19,16 @@ import Offer from "../src/Pages/service/Offer";
 import Value from "../src/Pages/service/Delivery";
 import Test from "../src/Pages/service/Test";
 import Blog from "../src/Pages/service/blog";
+import PriceHero from "../src/Pages/Price/Pricehero";
+import PriceCount from "../src/Pages/Price/pricecount";
+import PricePlan from "../src/Pages/Price/PricePlan";
+import Policyhero from "../src/Pages/Policy/policyhero";
+import PolicyAbout from "../src/Pages/Policy/PolicyAbout";
+import Cta from "../src/Pages/Policy/Cta";
+import Contactmap from "../src/Pages/Contact/contactmap";
+import Contactform from "../src/Pages/Contact/form";
+import Contact from "../src/Pages/Contact/myContact";
+import BlogList from "../src/Pages/Blog/bloglist";
 
 export default function App() {
   const [showForm, setShowForm] = useState(false);
@@ -34,14 +44,11 @@ export default function App() {
           path="/"
           element={
             <>
-              <Hero setShowForm={setShowForm} />
-              <Services />
-              <About setShowForm={setShowForm} />
-              <HowItWorks />
-              <Eco />
-              <CTA />
-              <Testimonials />
-              <FAQ />
+              <Ourservice /> <About1 setShowForm={setShowForm} />
+              <About2 setShowForm={setShowForm} />{" "}
+              <Whyus setShowForm={setShowForm} />{" "}
+              <Offer setShowForm={setShowForm} />
+              <Value /> <Test /> <Blog />{" "}
               <QuickService setShowForm={setShowForm} />
             </>
           }
@@ -50,10 +57,43 @@ export default function App() {
           path="/ourservice"
           element={
             <>
-              <Ourservice /> <About1 />
-              <About2 /> <Whyus /> <Offer />
-              <Value /> <Test /> <Blog />{" "}
+              <Hero setShowForm={setShowForm} />
+              <Services />
+              <About setShowForm={setShowForm} />
+              <HowItWorks />
+              <Eco />
+              <CTA />
+              {/*   <Testimonials /> */}
+              <FAQ />
               <QuickService setShowForm={setShowForm} />
+            </>
+          }
+        />
+        <Route
+          path="/pricing"
+          element={
+            <>
+              <PriceHero /> <PriceCount /> <PricePlan />
+            </>
+          }
+        />
+        <Route
+          path="/policy"
+          element={
+            <>
+              <Policyhero /> <PolicyAbout />
+              <Cta />
+            </>
+          }
+        />
+        <Route path="/blog" element={<BlogList />} />
+        <Route
+          path="/contact"
+          element={
+            <>
+              <Contactmap />
+              <Contactform />
+              <Contact />
             </>
           }
         />
