@@ -1,51 +1,7 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Faq from "../assets/faq.jpg";
-import Faq1 from "../assets/faq1.jpg";
-import Faq2 from "../assets/faq2.jpg";
 
-const textColumnVariants = {
-  hidden: { opacity: 0, x: -100 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.3,
-      ease: [0.17, 0.55, 0.55, 1],
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const imageColumnVariants = {
-  hidden: { opacity: 0, x: 100 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.17, 0.55, 0.55, 1],
-      staggerChildren: 0.2,
-      delay: 0.2,
-    },
-  },
-};
-
-const contentVariants = {
-  collapsed: {
-    height: 0,
-    opacity: 0,
-    transition: { duration: 0.4, ease: "easeInOut" },
-  },
-
-  expanded: {
-    height: "auto",
-    opacity: 1,
-    transition: { duration: 0.6, ease: "easeInOut" },
-  },
-};
-
-// ------------------------------
+import Faq from "../assets/faq.webp";
+import Faq1 from "../assets/faq1.webp";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -78,40 +34,19 @@ const FAQSection = () => {
   };
 
   return (
-    <div className=" py-16 md:py-24 px-4 md:px-8 relative overflow-hidden">
+    <div className="py-16 md:py-24 px-4 md:px-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-        <motion.div
-          className="text-left"
-          variants={textColumnVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-        >
-          <motion.p
-            className="inline-block px-4 py-2 bg-[#F5F0E8] text-[#2E2A53] font-semibold tracking-wider uppercase mt-8 mb-3 rounded-full shadow-md"
-            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-          >
+        <div className="text-left">
+          <p className="inline-block px-4 py-2 bg-[#F5F0E8] text-[#2E2A53] font-semibold tracking-wider uppercase mt-8 mb-3 rounded-full shadow-md">
             FAQ
-          </motion.p>
-          <motion.h2
-            className="text-4xl md:text-5xl font-extrabold text-[#2E2A53] mb-6 leading-tight"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { delay: 0.1 } },
-            }}
-          >
+          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#2E2A53] mb-6 leading-tight">
             Popular Questions
-          </motion.h2>
-          <motion.p
-            className="text-lg text-[#6E5A4C] mb-12"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { delay: 0.2 } },
-            }}
-          >
+          </h2>
+          <p className="text-lg text-[#6E5A4C] mb-12">
             You can use our services in any convenient way – the choice is
             yours.
-          </motion.p>
+          </p>
 
           <div className="space-y-4">
             {faqs.map((item, index) => (
@@ -119,10 +54,12 @@ const FAQSection = () => {
                 <button
                   className="w-full text-left py-2 flex justify-between items-center group"
                   onClick={() => toggleAccordion(index)}
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-content-${index}`}
                 >
                   <h3
                     className={`text-xl font-semibold text-[#2E2A53] ${
-                      index === 0
+                      openIndex === index
                         ? "text-[#2E2A53] border-b-2 border-[#2E2A53] pb-1"
                         : ""
                     } group-hover:text-[#2E2A53] transition-colors duration-300`}
@@ -138,58 +75,40 @@ const FAQSection = () => {
                   </span>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {openIndex === index && (
-                    <motion.div
-                      initial="collapsed"
-                      animate="expanded"
-                      exit="collapsed"
-                      variants={contentVariants}
-                      className="overflow-hidden"
-                    >
-                      <p className="text-base text-[#6E5A4C] pt-2 pb-4">
-                        {item.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                {openIndex === index && (
+                  <div
+                    id={`faq-content-${index}`}
+                    className="overflow-hidden transition-all duration-300 ease-in-out"
+                  >
+                    <p className="text-base text-[#6E5A4C] pt-2 pb-4">
+                      {item.answer}
+                    </p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="flex flex-col gap-6 pt-12"
-          variants={imageColumnVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-        >
-          <motion.div
-            className="relative overflow-hidden rounded-2xl shadow-xl w-full h-[250px]"
-            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
-          >
+        <div className="flex flex-col gap-6 pt-12">
+          <div className="relative overflow-hidden rounded-2xl shadow-xl w-full h-[250px]">
             <img
               src={Faq}
               alt="Stack of towels"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="relative overflow-hidden rounded-2xl shadow-xl w-full h-[250px]"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, transition: { delay: 0.2 } },
-            }}
-          >
+          <div className="relative overflow-hidden rounded-2xl shadow-xl w-full h-[250px]">
             <img
               src={Faq1}
               alt="Woman at dry cleaning counter"
               className="w-full h-full object-cover"
+              loading="lazy"
             />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -4,31 +4,22 @@ import Footer from "./Component/footer";
 import Hero from "./Component/Hero";
 import Services from "./Component/Service";
 import About from "./Component/About";
-import HowItWorks from "./Component/HowItWorks";
+
 import Eco from "./Component/Eco";
-import Testimonials from "./Component/Testimonials";
+
 import FAQ from "./Component/Faq";
 import CTA from "./Component/Cta";
 import QuickService from "./Component/QuickService";
 import { Routes, Route } from "react-router-dom";
-import Ourservice from "../src/Pages/Ourservice";
-import About1 from "../src/Pages/service/Aboutservice";
-import About2 from "../src/Pages/service/About2service";
-import Whyus from "../src/Pages/service/whyus";
-import Offer from "../src/Pages/service/Offer";
-import Value from "../src/Pages/service/Delivery";
-import Test from "../src/Pages/service/Test";
-import Blog from "../src/Pages/service/blog";
-import PriceHero from "../src/Pages/Price/Pricehero";
-import PriceCount from "../src/Pages/Price/pricecount";
-import PricePlan from "../src/Pages/Price/PricePlan";
-import Policyhero from "../src/Pages/Policy/policyhero";
-import PolicyAbout from "../src/Pages/Policy/PolicyAbout";
-import Cta from "../src/Pages/Policy/Cta";
-import Contactmap from "../src/Pages/Contact/contactmap";
-import Contactform from "../src/Pages/Contact/form";
-import Contact from "../src/Pages/Contact/myContact";
-import BlogList from "../src/Pages/Blog/bloglist";
+
+import About2 from "./Component/About2service";
+
+import Test from "./Component/Test";
+
+import Contact from "./Component/Contact/contactmap";
+import Contactform from "./Component/Contact/form";
+import Contactme from "./Component/Contact/myContact";
+import Order from "./Component/Contact/Orderform";
 
 export default function App() {
   const [showForm, setShowForm] = useState(false);
@@ -95,7 +86,10 @@ export default function App() {
           path="/contact"
           element={
             <>
-              <QuickService setShowForm={setShowForm} />
+              <Contact />
+              <Order />
+              <Contactform />
+              <Contactme />
             </>
           }
         />

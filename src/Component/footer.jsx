@@ -11,9 +11,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#1a1c32] text-white pt-12 pb-6 font-sans border border-gray-700">
       <div className="w-full px-4">
-        {/* Grid Section */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          {/* Column 1: Social Media */}
           <div>
             <div className="flex space-x-4 text-xl mb-4">
               <a href="#" className="hover:text-blue-500">
@@ -38,7 +36,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Column 2: Services */}
           <div>
             <h3 className="text-lg font-semibold mb-3">Our Services</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
@@ -70,7 +67,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Company */}
           <div>
             <h3 className="text-lg font-semibold mb-3">About Us</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
@@ -97,7 +93,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
           <div>
             <h3 className="text-lg font-semibold mb-3">Contact</h3>
             <p className="text-gray-400 text-sm">📞 6789087656</p>
@@ -109,10 +104,8 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
         <hr className="border-gray-700 mb-6" />
 
-        {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
           <div className="flex space-x-4 mb-3 md:mb-0">
             <a href="#" className="hover:text-white">

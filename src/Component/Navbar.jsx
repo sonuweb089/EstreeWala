@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Estreewala from "../assets/Estreewala.png";
+import Estreewala from "../assets/Estreewala.webp";
 import { MdShoppingBasket } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = ({ showForm, setShowForm }) => {
   const [open, setOpen] = useState(false);
-  const location = useLocation(); // current route
+  const location = useLocation();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -21,7 +21,6 @@ const Navbar = ({ showForm, setShowForm }) => {
 
   return (
     <>
-      {/* ===== NAVBAR ===== */}
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -29,7 +28,6 @@ const Navbar = ({ showForm, setShowForm }) => {
         className="sticky top-0 z-50 bg-offwhite/80 backdrop-blur-sm shadow-md"
       >
         <div className="container flex items-center justify-between py-4 px-4 md:px-10">
-          {/* Logo */}
           <div className="flex items-center gap-3">
             <img
               src={Estreewala}
@@ -41,7 +39,6 @@ const Navbar = ({ showForm, setShowForm }) => {
             </span>
           </div>
 
-          {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-6 text-[#2E2A53] font-medium">
             {navLinks.map((link) => {
               const isActive =
@@ -65,7 +62,6 @@ const Navbar = ({ showForm, setShowForm }) => {
             })}
           </nav>
 
-          {/* Desktop Button */}
           <div className="hidden md:block">
             <button
               onClick={() => setShowForm(true)}
@@ -75,7 +71,6 @@ const Navbar = ({ showForm, setShowForm }) => {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <div className="md:hidden">
             <button
               onClick={() => setOpen(!open)}
@@ -87,7 +82,6 @@ const Navbar = ({ showForm, setShowForm }) => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {open && (
           <div className="md:hidden border-t bg-offwhite">
             <div className="px-6 py-4 space-y-3 flex flex-col">
@@ -105,7 +99,6 @@ const Navbar = ({ showForm, setShowForm }) => {
                 </Link>
               ))}
 
-              {/* Mobile Book Pickup Button */}
               <button
                 onClick={() => setShowForm(true)}
                 className="w-full mt-2 bg-[#2E2A53] text-white py-2 rounded hover:bg-[#1A1A1A] transition"
@@ -117,7 +110,6 @@ const Navbar = ({ showForm, setShowForm }) => {
         )}
       </motion.header>
 
-      {/* ===== BOOK PICKUP FORM MODAL ===== */}
       <AnimatePresence>
         {showForm && (
           <motion.div
