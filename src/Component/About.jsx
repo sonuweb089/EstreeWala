@@ -37,7 +37,7 @@ const AboutUsSection = ({ setShowForm }) => {
   };
 
   return (
-    <div className="px-4 md:px-8 bg-gradient-to-b from-[#F5F0E8] to-[#C9B9A5] py-16">
+    <div className="px-4 md:px-8  py-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <motion.div
           className="flex flex-row justify-center items-end gap-3 w-full"

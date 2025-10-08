@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Hero = ({ setShowForm }) => {
   return (
-    <section className="bg-gradient-to-b from-[#F5F0E8] to-[#C9B9A5] text-center py-20 relative overflow-hidden">
+    <section className="text-center py-20 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ const Hero = ({ setShowForm }) => {
           <div className="mt-10">
             <button
               onClick={() => setShowForm(true)}
-              className="bg-[#2E2A53] text-[#F5F0E8] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-[#1E9E8C] transition-all duration-300 transform hover:scale-105"
+              className="bg-[#2E2A53] text-[#F5F0E8] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-[#2E2A78] transition-all duration-300 transform hover:scale-105"
             >
               Order now
             </button>

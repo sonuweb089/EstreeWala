@@ -23,13 +23,8 @@ const childVariants = {
 
 const QuickServiceHero = ({ setShowForm }) => {
   return (
-    // 1. Removed h-[95vh] and used min-h-screen for flexibility.
-    // 2. Removed py-20.
-    // 3. Changed items-center to items-start to align content to the top.
-    <div className="max-h-[7xl]  flex items-start bg-gradient-to-b from-[#C9B9A5] to-[#F5F0E8] justify-center text-center px-4 relative overflow-hidden">
+    <div className="max-h-[7xl]  flex items-start  justify-center text-center px-4 relative overflow-hidden">
       <motion.div
-        // Added some top padding (pt-16) to the content itself for a small buffer,
-        // as removing all padding might push it right against the edge.
         className="max-w-4xl mx-auto z-11 pt-16 md:pt-24 mb-10"
         variants={heroVariants}
         initial="hidden"

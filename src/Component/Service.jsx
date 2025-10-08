@@ -7,7 +7,7 @@ import hero from "../assets/hero1.png";
 
 const Service = () => {
   return (
-    <div className="bg-gradient-to-b from-[#C9B9A5] to-[#F5F0E8] text-center py-12 relative overflow-hidden">
+    <div className=" text-center py-12 relative overflow-hidden">
       {/* SECTION 1: The three image cards - LEFT AND RIGHT ELEVATED ON ALL SIZES */}
       <motion.div
         initial={{ y: 20, opacity: 0 }}

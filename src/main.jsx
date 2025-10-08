@@ -7,7 +7,9 @@ import App from "./App.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <div class="min-h-screen bg-gradient-to-br from-[#FDFCFB] to-[#E2D1C3]">
+        <App />
+      </div>
     </BrowserRouter>
   </StrictMode>
 );

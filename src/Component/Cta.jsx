@@ -52,7 +52,7 @@ const DeliveryServiceSection = () => {
   ];
 
   return (
-    <div className="py-16 md:py-24 px-4 md:px-8 relative bg-gradient-to-b from-[#F5F0E8] to-[#C9B9A5]">
+    <div className="py-16 md:py-24 px-4 md:px-8 relative ">
       <motion.div
         className="max-w-7xl mx-auto"
         variants={headingVariants}

@@ -33,7 +33,7 @@ const LaundryWalaServices = ({ setShowForm }) => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#F5F0E8]">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 ">
       {" "}
       {/* offwhite */}
       <div className="max-w-7xl mx-auto text-center">

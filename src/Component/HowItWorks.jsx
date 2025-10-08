@@ -61,7 +61,7 @@ const OurServicesSection = () => {
   };
 
   return (
-    <div className="py-16 md:py-24 px-4 md:px-8 relative overflow-hidden bg-gradient-to-b from-[#F5F0E8] to-[#C9B9A5]">
+    <div className="py-16 md:py-24 px-4 md:px-8 relative overflow-hidden ">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="lg:w-1/3 mb-6 lg:mb-0"

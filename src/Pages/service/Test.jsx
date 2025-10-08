@@ -70,7 +70,7 @@ const LaundryWalaTestimonials = () => {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F5F0E8]">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-7xl mx-auto text-center">
         <motion.div
           initial="hidden"

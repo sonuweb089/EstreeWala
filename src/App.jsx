@@ -34,7 +34,7 @@ export default function App() {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <div className="absolute inset-0 bg-gradient-to-b from-[#F5F0E8] to-[#C9B9A5] opacity-80">
+    <div>
       {/* Navbar always visible */}
       <Navbar showForm={showForm} setShowForm={setShowForm} />
 
@@ -101,7 +101,6 @@ export default function App() {
         />
       </Routes>
 
-      {/* Footer always visible */}
       <Footer />
     </div>
   );
