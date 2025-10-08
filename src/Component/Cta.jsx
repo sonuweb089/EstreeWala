@@ -45,7 +45,8 @@ const DeliveryServiceSection = () => {
                             bg-gradient-to-b from-[#E9DDC9] to-[#C9B9A5]
                             transition-all duration-500 ease-out
                             hover:-translate-y-2 hover:shadow-3xl
-                            h-[320px] sm:h-[400px] md:h-[450px] cursor-pointer"
+                            /* HEIGHT REDUCTION APPLIED HERE */
+                            h-[260px] sm:h-[320px] md:h-[360px] cursor-pointer"
             >
               <img
                 src={card.img}

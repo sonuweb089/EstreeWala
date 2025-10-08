@@ -1,21 +1,21 @@
 import React from "react";
-
-import { motion } from "framer-motion";
+// Removed: import { motion } from "framer-motion";
 import { FaRegClock, FaMoneyBillWave, FaLeaf } from "react-icons/fa";
 
+// NOTE ON IMAGE OPTIMIZATION:
+// The imported assets (myimg, myimg1, hero) should be checked externally.
+// Ensure their *physical file size* (KB/MB) and *dimensions* are minimized.
+// For example, if the images are only displayed at 300px wide, they shouldn't be 2000px wide.
 import myimg from "../assets/pic.webp";
 import myimg1 from "../assets/pic2.webp";
 import hero from "../assets/hero1.webp";
 
+// Removed: featureSectionVariants definition
+
 const Service = () => {
-  const featureSectionVariants = {
-    initial: { opacity: 0, y: 30 },
-
-    inView: { opacity: 1, y: 0 },
-  };
-
   return (
     <div className="text-center py-12 relative overflow-hidden">
+      {/* Image Gallery - Static */}
       <div className="grid grid-cols-3 gap-2 px-2 max-w-6xl mx-auto">
         <div className="p-1 mt-[-2rem]">
           <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-4">
@@ -23,7 +23,7 @@ const Service = () => {
               src={myimg1}
               alt="Hands holding colorful clothes"
               className="w-full h-full object-cover rounded-lg aspect-[3/4]"
-              loading="lazy"
+              loading="lazy" // Good for performance
             />
           </div>
         </div>
@@ -34,7 +34,7 @@ const Service = () => {
               src={hero}
               alt="Man smiling with clean laundry"
               className="w-full h-full object-cover rounded-lg aspect-[3/4]"
-              loading="lazy"
+              loading="lazy" // Good for performance
             />
           </div>
         </div>
@@ -45,23 +45,22 @@ const Service = () => {
               src={myimg}
               alt="Hands holding neatly folded clothes with a flower"
               className="w-full h-full object-cover rounded-lg aspect-[3/4]"
-              loading="lazy"
+              loading="lazy" // Good for performance
             />
           </div>
         </div>
       </div>
 
+      {/* Feature Section - Now Static */}
       <div className="py-16 px-4 md:px-8 lg:px-16">
-        <motion.div
-          variants={featureSectionVariants}
-          initial="initial"
-          whileInView="inView"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+        {/* Replaced motion.div with a standard div */}
+        <div
+          // Removed framer-motion props (variants, initial, whileInView, viewport, transition)
           className="max-w-7xl mx-auto"
         >
           <div className="bg-[#2E2A53] text-white rounded-lg p-8 md:p-12 shadow-xl">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+              {/* Feature 1 */}
               <div
                 className="flex flex-col items-center text-center p-4 rounded-lg 
                                  transition-all duration-300 ease-in-out 
@@ -77,13 +76,15 @@ const Service = () => {
                 </p>
               </div>
 
+              {/* Feature 2 */}
               <div
                 className="flex flex-col items-center text-center p-4 rounded-lg 
                                  transition-all duration-300 ease-in-out 
                                  hover:bg-[#3A356A] hover:scale-105 hover:shadow-2xl cursor-pointer"
               >
                 <div className="mb-4 text-4xl">
-                  <FaMoneyBillWave size={32} className="text-[#496e44]" />
+                  {/* Corrected FaMoneyBillWave color for better contrast/theme */}
+                  <FaMoneyBillWave size={32} className="text-[#6E5A4C]" />
                 </div>
                 <h3 className="text-2xl font-semibold mb-2">Money saving</h3>
                 <p className="text-[#E9DDC9] text-lg leading-relaxed">
@@ -92,6 +93,7 @@ const Service = () => {
                 </p>
               </div>
 
+              {/* Feature 3 */}
               <div
                 className="flex flex-col items-center text-center p-4 rounded-lg 
                                  transition-all duration-300 ease-in-out 
@@ -110,7 +112,7 @@ const Service = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
