@@ -1,20 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaStar, FaRegStar } from "react-icons/fa";
 
-const colors = {
-  taupe: "#6E5A4C",
-  cream: "#E9DDC9",
-  navy: "#2E2A53",
-  charcoal: "#1A1A1A",
-  graywarm: "#C9B9A5",
-  offwhite: "#F5F0E8",
-  white: "#FFFFFF",
-  yellow: "#FACC15", // For stars
-};
-
-// --- Framer Motion Animation Variants ---
-
-// Parent container for staggered appearance
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -26,7 +13,6 @@ const container = {
   },
 };
 
-// Child variant for smooth fade-in-up (used on each review card)
 const reviewItem = {
   hidden: { opacity: 0, y: 50 },
   show: {
@@ -36,7 +22,6 @@ const reviewItem = {
   },
 };
 
-// Header text animation
 const headerItem = {
   hidden: { opacity: 0, y: -20 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -68,23 +53,25 @@ const LaundryWalaTestimonials = () => {
     },
   ];
 
-  // Helper function to render stars
+  // Helper function to render stars using FaStar and FaRegStar
   const renderStars = (rating) => {
-    return (
-      <div className="text-xl" style={{ color: colors.yellow }}>
-        {"★".repeat(rating)}
-        {"★".repeat(5 - rating)}
-      </div>
-    );
+    const totalStars = 5;
+    const stars = [];
+
+    for (let i = 0; i < rating; i++) {
+      stars.push(<FaStar key={`star-${i}`} className="inline-block" />);
+    }
+
+    for (let i = rating; i < totalStars; i++) {
+      stars.push(<FaRegStar key={`star-reg-${i}`} className="inline-block" />);
+    }
+
+    return <div className="text-xl space-x-0.5 text-[#FACC15]">{stars}</div>;
   };
 
   return (
-    <section
-      className="py-20 px-4 sm:px-6 lg:px-8"
-      style={{ backgroundColor: colors.offwhite }}
-    >
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#F5F0E8]">
       <div className="max-w-7xl mx-auto text-center">
-        {/* Header Text (Animated) */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -93,15 +80,13 @@ const LaundryWalaTestimonials = () => {
         >
           <motion.p
             variants={headerItem}
-            className="text-sm font-semibold uppercase tracking-widest mb-2"
-            style={{ color: colors.taupe }}
+            className="inline-block px-4 py-2 mb-3 bg-[#F5F0E8] text-[#6E5A4C] font-semibold tracking-wider uppercase mt-8 rounded-full shadow-md"
           >
             TESTIMONIALS
           </motion.p>
           <motion.h2
             variants={headerItem}
-            className="text-4xl lg:text-5xl font-extrabold mb-8 leading-tight"
-            style={{ color: colors.navy }}
+            className="text-4xl lg:text-5xl font-extrabold mb-8 leading-tight text-[#2E2A53]" // Replaced inline styles with text-navy / text-[#2E2A53]
           >
             Satisfied customers sing our praises
           </motion.h2>
@@ -116,8 +101,8 @@ const LaundryWalaTestimonials = () => {
           className="flex justify-center space-x-6 mb-12"
         >
           <button
-            className="font-bold py-1 border-b-2"
-            style={{ borderColor: colors.taupe, color: colors.taupe }}
+            // Replaced inline styles with Tailwind classes
+            className="font-bold py-1 border-b-2 border-[#6E5A4C] text-[#6E5A4C]"
           >
             All Reviews
           </button>
@@ -135,11 +120,7 @@ const LaundryWalaTestimonials = () => {
             <motion.div
               key={index}
               variants={reviewItem}
-              className="rounded-xl p-6 shadow-xl text-left flex flex-col h-full"
-              style={{
-                backgroundColor: colors.white,
-                border: `1px solid ${colors.graywarm}`,
-              }}
+              className="rounded-xl p-6 shadow-xl text-left flex flex-col h-full bg-white border border-[#C9B9A5]" // Replaced inline styles
             >
               {/* Header: Name and Time */}
               <div className="flex items-center mb-4">
@@ -150,12 +131,13 @@ const LaundryWalaTestimonials = () => {
                 />
                 <div>
                   <p
-                    className="font-bold text-base"
-                    style={{ color: colors.charcoal }}
+                    className="font-bold text-base text-[#1A1A1A]" // Replaced inline styles
                   >
                     {review.name}
                   </p>
-                  <p className="text-sm" style={{ color: colors.graywarm }}>
+                  <p className="text-sm text-[#C9B9A5]">
+                    {" "}
+                    // Replaced inline styles
                     {review.time}
                   </p>
                 </div>
@@ -166,24 +148,22 @@ const LaundryWalaTestimonials = () => {
 
               {/* Review Text */}
               <p
-                className="text-base flex-grow mb-6 italic"
-                style={{ color: colors.charcoal }}
+                className="text-base flex-grow mb-6 italic text-[#1A1A1A]" // Replaced inline styles
               >
                 &ldquo;{review.text}&rdquo;
               </p>
 
               {/* Footer: Posted on Google */}
               <div
-                className="pt-4 border-t w-full"
-                style={{ borderColor: colors.graywarm }}
+                className="pt-4 border-t w-full border-[#C9B9A5]" // Replaced inline styles
               >
                 <p
-                  className="flex items-center text-sm font-semibold"
-                  style={{ color: colors.charcoal }}
+                  className="flex items-center text-sm font-semibold text-[#1A1A1A]" // Replaced inline styles
                 >
                   <span className="text-xl mr-2">G</span> Posted on{" "}
-                  <span className="ml-1" style={{ color: colors.navy }}>
-                    Google
+                  <span className="ml-1 text-[#2E2A53]">
+                    {" "}
+                    // Replaced inline styles Google
                   </span>
                 </p>
               </div>

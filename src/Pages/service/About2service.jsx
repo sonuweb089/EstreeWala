@@ -38,7 +38,7 @@ const LaundryWalaServices = ({ setShowForm }) => {
       {/* offwhite */}
       <div className="max-w-7xl mx-auto text-center">
         {/* Header Text */}
-        <p className="text-sm font-semibold uppercase tracking-wider mb-2 text-[#1A1A1A]">
+        <p className="inline-block px-4 py-2 mb-3 bg-[#F5F0E8] text-[#2E2A53] font-semibold tracking-wider uppercase mt-8 rounded-full shadow-md">
           {/* charcoal */}
           OUR SERVICES
         </p>
