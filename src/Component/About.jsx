@@ -39,49 +39,45 @@ const AboutUsSection = ({ setShowForm }) => {
   return (
     <div className="px-4 md:px-8 bg-gradient-to-b from-[#F5F0E8] to-[#C9B9A5] py-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        {/* LEFT IMAGES SECTION */}
         <motion.div
-          className="flex flex-col md:flex-row gap-6 w-full"
+          className="flex flex-row justify-center items-end gap-3 w-full"
           variants={imageVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
         >
-          {/* Image Block 1 */}
           <motion.div
-            className="relative overflow-hidden rounded-2xl shadow-xl w-full h-[300px] sm:h-[400px] md:w-1/2 md:h-[450px]"
+            className="w-1/2 relative overflow-hidden rounded-2xl shadow-xl mt-8 sm:mt-12 bg-white"
             variants={childTextVariants}
           >
             <img
               src={Ab}
               alt="Laundry worker working on a suit"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover aspect-[2/3] rounded-2xl"
             />
           </motion.div>
 
-          {/* Image Block 2 */}
           <motion.div
-            className="relative overflow-hidden rounded-2xl shadow-xl w-full h-[300px] sm:h-[400px] md:w-1/2 md:h-[450px] mt-6 md:mt-12"
+            className="w-1/2 relative overflow-hidden rounded-2xl shadow-xl mb-8 sm:mb-12 bg-white"
             variants={childTextVariants}
           >
             <img
               src={Ab1}
               alt="Woman sorting clothes by washing machine"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover aspect-[2/3] rounded-2xl"
             />
           </motion.div>
         </motion.div>
 
-        {/* RIGHT TEXT SECTION */}
         <motion.div
-          className="text-left"
+          className="text-center lg:text-left"
           variants={textVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
         >
           <motion.p
-            className="text-[#2E2A45] font-semibold tracking-wider uppercase mb-3"
+            className="inline-block px-4 py-2 bg-[#F5F0E8] mb-3 text-[#2E2A53] font-semibold tracking-wider uppercase mt-8 rounded-full shadow-md"
             variants={childTextVariants}
           >
             About Us
@@ -95,7 +91,7 @@ const AboutUsSection = ({ setShowForm }) => {
           </motion.h2>
 
           <motion.p
-            className="text-base sm:text-lg text-[#6E5A4C] mb-6"
+            className="text-base sm:text-lg text-[#6E5A4C] mb-4"
             variants={childTextVariants}
           >
             The company's primary aim is to provide modern laundry and dry

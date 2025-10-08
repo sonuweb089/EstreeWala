@@ -47,10 +47,10 @@ export default function App() {
               <Hero setShowForm={setShowForm} />
               <Services />
               <About setShowForm={setShowForm} />
-              <HowItWorks />
-              <Eco />
+              <About2 setShowForm={setShowForm} /> <Eco />
               <CTA />
               {/*   <Testimonials /> */}
+              <Test />
               <FAQ />
               <QuickService setShowForm={setShowForm} />
             </>
@@ -60,40 +60,42 @@ export default function App() {
           path="/ourservice"
           element={
             <>
-              <Ourservice /> <About1 setShowForm={setShowForm} />
-              <About2 setShowForm={setShowForm} />{" "}
-              <Whyus setShowForm={setShowForm} />{" "}
-              <Offer setShowForm={setShowForm} />
-              <Value /> <Test /> <Blog />{" "}
-              <QuickService setShowForm={setShowForm} />
+              <About2 setShowForm={setShowForm} /> <Eco />
             </>
           }
         />
         <Route
-          path="/pricing"
+          path="/About"
           element={
             <>
-              <PriceHero /> <PriceCount /> <PricePlan />
+              <About setShowForm={setShowForm} />
             </>
           }
         />
         <Route
-          path="/policy"
+          path="/ecofriendly"
           element={
             <>
-              <Policyhero /> <PolicyAbout />
-              <Cta />
+              <Eco />
             </>
           }
         />
-        <Route path="/blog" element={<BlogList />} />
+        <Route
+          path="/cta"
+          element={
+            <>
+              <CTA />
+            </>
+          }
+        />
+
+        <Route path="/testimonial" element={<Test />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route
           path="/contact"
           element={
             <>
-              <Contactmap />
-              <Contactform />
-              <Contact />
+              <QuickService setShowForm={setShowForm} />
             </>
           }
         />

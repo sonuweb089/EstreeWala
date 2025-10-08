@@ -9,11 +9,9 @@ const Hero = ({ setShowForm }) => {
         transition={{ duration: 0.7 }}
         className="w-full"
       >
-        <div className="relative z-10 max-w-5xl mx-auto px-13">
-          <h2 className="text-2xl md:text-7xl font-bold leading-snug text-[#2E2A53]">
-            Dry <span className="text-[#6E5A4C]">Cleaning</span>
-            <br /> & <br />
-            Laundry Experts
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-snug text-[#2E2A53] tracking-tight">
+            Dry Cleaning & Laundry Experts
           </h2>
 
           <p className="mt-6 text-lg text-[#1A1A1A]">
@@ -24,9 +22,9 @@ const Hero = ({ setShowForm }) => {
           <div className="mt-10">
             <button
               onClick={() => setShowForm(true)}
-              className="bg-[#6E5A4C] text-[#F5F0E8] px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-[#2E2A53] transition"
+              className="bg-[#2E2A53] text-[#F5F0E8] px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-[#1E9E8C] transition-all duration-300 transform hover:scale-105"
             >
-              Order Now
+              Order now
             </button>
           </div>
         </div>

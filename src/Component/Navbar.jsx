@@ -10,10 +10,12 @@ const Navbar = ({ showForm, setShowForm }) => {
 
   const navLinks = [
     { name: "Home", path: "/" },
+    { name: "About", path: "/About" },
     { name: "Services", path: "/ourservice" },
-    { name: "Pricing", path: "/pricing" },
-    { name: "Policies", path: "/policy" },
-    { name: "Laundry Blog", path: "/blog" },
+    { name: "Eco-Friendly", path: "/ecofriendly" },
+    { name: "Testimonials", path: "/testimonial" },
+    { name: "FAQ", path: "/faq" },
+
     { name: "Contact Us", path: "/contact" },
   ];
 

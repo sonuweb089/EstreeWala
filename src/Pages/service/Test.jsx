@@ -121,18 +121,6 @@ const LaundryWalaTestimonials = () => {
           >
             All Reviews
           </button>
-          <button
-            className="font-bold py-1 opacity-60 transition duration-300 hover:opacity-100"
-            style={{ color: colors.charcoal }}
-          >
-            Google
-          </button>
-          <button
-            className="font-bold py-1 opacity-60 transition duration-300 hover:opacity-100"
-            style={{ color: colors.charcoal }}
-          >
-            Yelp
-          </button>
         </motion.div>
 
         {/* Review Cards Container (Animated) */}

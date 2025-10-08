@@ -68,7 +68,7 @@ const OurServicesSection = () => {
           variants={topSectionVariants}
           viewport={{ once: false, amount: 0.3 }}
         >
-          <p className="text-[#2E2A45] font-semibold tracking-wider uppercase text-lg">
+          <p className="inline-block px-4 py-2 bg-[#F5F0E8] text-[#2E2A53] font-semibold tracking-wider uppercase mt-8 rounded-full shadow-md">
             Our services
           </p>
         </motion.div>

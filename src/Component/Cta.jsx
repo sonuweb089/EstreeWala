@@ -62,7 +62,7 @@ const DeliveryServiceSection = () => {
       >
         {/* Heading */}
         <div className="mb-12 md:mb-16 text-center md:text-left">
-          <p className="text-[#2E2A35] font-semibold tracking-wider uppercase mb-3">
+          <p className="inline-block px-4 py-2 bg-[#F5F0E8] text-[#2E2A53] font-semibold tracking-wider uppercase mt-8 mb-3 rounded-full shadow-md">
             Delivery Service
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#2E2A53] leading-tight">
